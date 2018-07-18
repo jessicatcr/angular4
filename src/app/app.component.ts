@@ -2,9 +2,90 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+  // templateUrl: './app.component.html',
+  template: `
+  <!--<p>Aula 3</p>-->
+  <!--<p>Como está?</p>-->
+  <!--<p>{{ meuObjeto.pais }}</p>-->
+  <!--<ul>-->
+  <!--<li *ngFor="let vet of meuVetor">{{ vet }}</li>-->
+  <!--<br>-->
+  <!--<li *ngIf="meuVetor2">Eu existo</li>&lt;!&ndash;Pode usar operadores de ==, !=, >, <, !... &ndash;&gt;-->
+  <!--<br>-->
+  <!--<li *ngIf="meuVetor2; else outroTmpl">Eu existo</li>-->
+  <!--</ul>-->
+
+  <!--<div *ngIf="meuVetor2; then tmpl1 else tmpl2"></div>-->
+
+  <!--<ng-template #outroTmpl>Eu não existo. </ng-template>-->
+  <!--<ng-template #tmpl1>Vetor como verdadeiro. </ng-template>-->
+  <!--<ng-template #tmpl2>Vetor como falso. </ng-template>-->
+  <!--<p>Aula 4</p>-->
+  <!--<img src="{{ angularLogo }}">-->
+  <!--<img [src]="angularLogo"> &lt;!&ndash; Jeito mais comum de property binding &ndash;&gt;-->
+  <!--<img bind-src="angularLogo">-->
+  <!--<button [disabled]="statusBotao == 'desabilitado'">Meu Botão</button>-->
+  <!--<p>Aula 5</p>-->
+  <!--<button (click)="meuEvento($event)">Meu Botão</button>-->
+  <!--<button (mouseenter)="meuEvento($event)">Meu Botão</button> &lt;!&ndash;Passar por cima do botão&ndash;&gt;-->
+  <!--<p>Aula 6</p> &lt;!&ndash;Coisas CSS&ndash;&gt;-->
+  <!--<p>Aula 7</p>-->
+  <!--<h1 [class]="classeTitulo">Olá!</h1>-->
+  <!--<h1 [class.titulo-vermelho]="classeTitulo">Olá!</h1>-->
+  <!--<h1 [ngClass]="classesTitulo">Oláá!</h1>-->
+  <p>Aula 8</p>
+  <h1 [style.color]="estiloTitulo ? 'green' : 'pink'">Olá!</h1>
+  <h1 [ngStyle]="estilosTitulo">Oláá!</h1>
+  `,
+
+  // styleUrls: ['./app.component.css']
+  styles: [`
+  h1 {
+    text-decoration: underline;
+  }
+  .titulo-vermelho {
+      color: red;
+    }
+  .titulo-largo {
+    font-size: 4em;
+  }
+  `]
 })
 export class AppComponent {
-  title = 'app';
+  // Aula 8
+  //estiloTitulo = 'red';
+  estiloTitulo = false;
+  estilosTitulo = {
+    'color': 'red',
+    'font-size': '4em'
+  };
+
+  // Aula 7
+  // classeTitulo = 'titulo-vermelho';
+  classeTitulo = true;
+  classesTitulo = {
+    'titulo-vermelho': true,
+    'titulo-largo':true
+  };
+
+  // Aula 5
+  // Referência de event Binding - https://developer.mozilla.org/en-US/docs/Web/Events
+  // meuEvento(evento) {
+  //   console.log(evento);
+  // }
+
+  // Aula 4
+  // angularLogo = 'https://angular.io/assets/images/logos/angular/angular.png';
+  // statusBotao = false;
+  // statusBotao = 'desabilitado';
+  // statusBotao = 'habilitado';
+
+  // Aula 3
+  // meuObjeto = {
+  //   genero: 'feminino',
+  //   idade: 26,
+  //   pais: 'Brasil'
+  // };
+  // meuVetor = ['seu', 'sua', 'nosso'];
+  // meuVetor2 = true;
 }
